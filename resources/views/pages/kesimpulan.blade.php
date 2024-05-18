@@ -24,10 +24,12 @@
             </ul>
         @endforeach
     </ol>
-    <h4>Area berikut mengalami kerusakan</h4>
-    <ol>
-        @foreach ($area as $item)
-            <li><a href="/periksa/{{ $item['id'] }}" class="text-danger">{{ $item['name'] }}</a></li>
-        @endforeach
-    </ol>
+    @if (count($area_list))
+        <h4>Area berikut mengalami kerusakan</h4>
+        <ol>
+            @foreach ($area as $item)
+                <li><a href="/periksa/{{ $item['id'] }}" class="text-danger">{{ $item['name'] }}</a></li>
+            @endforeach
+        </ol>
+    @endif
 </x-app-layout>

@@ -1,6 +1,6 @@
 <x-app-layout>
-    <x-header title="Pilih gejala yang anda alami"
-        description='Pilih gejala yang sesuai pada kerusakan mobil.'></x-header>
+    <x-header title="Pilih Gejala Kerusakan"
+        description='Pilih gejala kerusakan yang sesuai dengan apa yang anda alami.'></x-header>
     <form action="/periksa" method="get" id="myform">
         <input type="hidden" name="g">
         @foreach ($gejala as $key => $g)
