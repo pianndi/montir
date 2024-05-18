@@ -121,7 +121,7 @@ class DatabaseSeeder extends Seeder
         }
 
 
-        for ($i = 1; $i < 36; $i++) {
+        for ($i = 1; $i <= 36; $i++) {
             $step_cond = mt_rand(7, 10);
             for ($step = 1; $step <= $step_cond; $step++) {
                 Step::create([
