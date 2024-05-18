@@ -1,0 +1,12 @@
+.card:has(input:checked) {
+  background: var(--bs-primary);
+  color: white;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.pointer:hover {
+  outline: 2px solid var(--bs-teal);
+}
