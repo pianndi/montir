@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description')->nullable()->default('Lorem ipsum dolor sit amet consectetur adipisicing elit.');
-            $table->text('video_url')->default('https://youtu.be/jRWA0o5-kTc?si=HoaK9Bs14h1zKSmd');
-            $table->text('video_embed_url')->default('https://youtube.com/embed/jRWA0o5-kTc?si=HoaK9Bs14h1zKSmd');
+            $table->text('description')->nullable();
+            $table->text('video_url');
+            $table->text('video_embed_url');
             $table->timestamps();
         });
     }

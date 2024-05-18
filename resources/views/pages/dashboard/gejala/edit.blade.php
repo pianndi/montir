@@ -25,6 +25,9 @@
                 </form>
             </div>
             <div class="card-body">
+                <a href="/dashboard/gejala/{{ request()->route()->parameter('id') }}/area"
+                    class="btn btn-primary btn-lg w-100 mb-2">Tambah Area Kerusakan</a>
+
                 @foreach ($gejala->gejalaArea as $item)
                     <div class="card mb-2">
                         <div class="card-header d-flex justify-content-between align-items-center">

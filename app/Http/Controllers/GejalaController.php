@@ -93,13 +93,5 @@ class GejalaController extends Controller
         }
         return back()->with('error', 'Gejala tidak ditemukan!');
     }
-    public function destroyGA($id)
-    {
-        $ga = GejalaArea::find($id);
-        if (!$ga) {
-            return back()->with('error', "Area Kerusakan tidak ditemukan");
-        }
-        $ga->delete();
-        return back()->with('success', "Area kerusakan berhasil dihapus");
-    }
+    
 }

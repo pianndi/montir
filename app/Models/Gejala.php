@@ -14,4 +14,8 @@ class Gejala extends Model
     {
         return $this->belongsToMany(Area::class, 'gejala_areas')->withPivot('id')->with('langkah');
     }
+    public function kerusakan()
+    {
+        return $this->hasMany(GejalaArea::class);
+    }
 }

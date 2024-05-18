@@ -4,10 +4,8 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GejalaAreaController;
 use App\Http\Controllers\GejalaController;
-use App\Models\Area;
-use App\Models\Gejala;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AppController::class, 'index']);
@@ -24,7 +22,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/dashboard', [DashboardController::class, 'index']);
 
-    Route::delete('/dashboard/kerusakan/{id}', [GejalaController::class, 'destroyGA']);
     // gejala
     Route::get('/dashboard/gejala', [GejalaController::class, 'index']);
     Route::post('/dashboard/gejala', [GejalaController::class, 'store']);
@@ -32,6 +29,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard/gejala/{id}/edit', [GejalaController::class, 'edit']);
     Route::put('/dashboard/gejala/{id}', [GejalaController::class, 'update']);
     Route::delete('/dashboard/gejala/{id}', [GejalaController::class, 'destroy']);
+    // gejala area
+    Route::get('/dashboard/gejala/{id}/area', [GejalaAreaController::class, 'index']);
+    Route::post('/dashboard/gejala/{id}/area', [GejalaAreaController::class, 'store']);
+    Route::delete('/dashboard/kerusakan/{id}', [GejalaAreaController::class, 'destroy']);
     // area
     Route::get('/dashboard/area', [AreaController::class, 'index']);
     Route::get('/dashboard/area/create', [AreaController::class, 'create']);
