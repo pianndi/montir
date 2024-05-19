@@ -17,7 +17,7 @@
                 <tr>
                     <td>{{ ($area->currentPage() - 1) * $area->perPage() + $no + 1 }}</td>
                     <td><a href="/periksa/{{ $g->id }}">{{ $g->name }}</a></td>
-                    <td>{{ $g->langkah()->count() }}</td>
+                    <td>{{ $g->langkah_count }}</td>
                     <td>
                         <div class="d-flex gap-2">
 

@@ -19,12 +19,10 @@ class AuthController extends Controller
             'username' => 'required',
             'password' => 'required|min:5'
         ]);
-        $user = User::where('username', $request->input('username'))->first();
-        if ($user) {
-            if (Auth::attempt($request->only('username', 'password'))) {
-                $request->session()->regenerate();
-                return redirect('/dashboard')->with('success', 'Login Berhasil');
-            }
+
+        if (Auth::attempt($request->only('username', 'password'))) {
+            $request->session()->regenerate();
+            return redirect('/dashboard')->with('success', 'Login Berhasil');
         } else {
             return back()->withErrors(['login' => 'Username atau password salah'])->with('error', 'Username atau password salah')->withInput();
         }

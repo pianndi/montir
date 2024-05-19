@@ -15,7 +15,7 @@ class AreaController extends Controller
     {
         // get all area with name or description with parameter cari
         $cari = "%" . request()->get('cari', '') . "%";
-        $area = Area::where('name', 'like', $cari)->orWhere('description', 'like', $cari)->paginate(20);
+        $area = Area::where('name', 'like', $cari)->orWhere('description', 'like', $cari)->withCount('langkah')->paginate(20);
         return view('pages.dashboard.area.index', compact('area'));
     }
 

@@ -15,7 +15,7 @@ class GejalaController extends Controller
     public function index()
     {
         $cari = "%" . request()->get('cari', '') . "%";
-        $gejala = Gejala::where('name', 'like', $cari)->paginate(20);
+        $gejala = Gejala::where('name', 'like', $cari)->withCount(['gejalaArea'])->paginate(20);
         return view('pages.dashboard.gejala.index', compact('gejala'));
     }
 
@@ -93,5 +93,4 @@ class GejalaController extends Controller
         }
         return back()->with('error', 'Gejala tidak ditemukan!');
     }
-    
 }

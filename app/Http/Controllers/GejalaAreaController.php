@@ -19,7 +19,7 @@ class GejalaAreaController extends Controller
         })->where(function ($query) use ($cari) {
             $query->where('name', 'like', $cari)
                 ->orWhere('description', 'like', $cari);
-        })
+        })->withCount(['langkah'])
             ->paginate(20);
         return view('pages.dashboard.gejala.area.index', compact('gejala', 'area'));
     }

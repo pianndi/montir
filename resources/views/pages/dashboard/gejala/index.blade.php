@@ -33,7 +33,7 @@
                     <td>
                         <a href="/periksa?g={{ $g->id }}">{{ $g->name }}</a>
                     </td>
-                    <td>{{ $g->gejalaArea()->count() }}</td>
+                    <td>{{ $g->gejala_area_count }}</td>
                     <td>
                         <div class="d-flex gap-2 ">
 
